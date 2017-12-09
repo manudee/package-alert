@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
 	    type: DataTypes.STRING,
       defaultValue: "Bob"
     },
-    pwd{
+    pwd:{
       type: DataTypes.STRING,
       allowNull:true	
     }
@@ -38,12 +38,12 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade"
     });
 
-    User.hasMay(models.Package, {
+    User.hasMany(models.Package, {
       onDelete: "cascade"
     });
   };
 
 
 
-  return Package;
+  return User;
 };
