@@ -13,29 +13,34 @@
 
 <body>
   <div class="container">
-    <div class="row top-30">
-      <div class="col-md-4">
-        <div class="form-group">
-          <select class="form-control" id="category">
-            <option selected value="">All Categories</option>
-            <option value="Personal">Personal</option>
-            <option value="Product Review">Product Review</option>
-            <option value="Political">Political</option>
-          </select>
+    <div class="jumbotron">
+      <h1 class='text-center'>Welcome to Package Alert!</h1>
+    </div>
+
+    <div id='login'>
+      <button type="button" data-toggle="modal" data-target="#login-modal" class="btn btn-success center-block">There is a package waiting for you</button>
+    </div>
+
+
+
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1 class='text-center'>Login to Your Account</h1><br>
+          <form class='text-center'>
+          <input type="text" name="user" placeholder="Username">
+          <input type="password" name="pass" placeholder="Password">
+          <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+          </form>
         </div>
       </div>
-      <div class="col-md-2">
-        <a class="btn btn-default" href="/cms">New Post</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 blog-container">
-      </div>
-    </div>
+</div>
+
   </div>
-  <!-- Custom Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
-  <script src="js/blog.js" type="text/javascript"></script>
+
+
+
 
 </body>
 
