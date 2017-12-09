@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     status: {
-      type: DataTypes.Boolean,
+      type: DataTypes.BOOLEAN,
       defaultValue: false,
       len: [1]
     },
@@ -20,8 +20,8 @@ module.exports = function(sequelize, DataTypes) {
 	  type: DataTypes.STRING,
       defaultValue: "Bob"
     },
-    pickUpDate{
-      type: DataTypes.Date,
+    pickUpDate:{
+      type: DataTypes.DATE,
       allowNull:true	
     }
   });
