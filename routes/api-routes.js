@@ -9,7 +9,23 @@ module.exports = function(app) {
 
 
 //associate route
-
+	app.get("/api/associate/packages", function(req, res) {
+		//joins 
+		db.Package.findAll({
+			include: [
+				{
+					model: db.User, 
+						include: [
+					 		{
+					 			model: db.UserInfo
+					 		}
+					 	]
+				}
+			]
+		}).then(function(dbPackage) {
+			res.json(dbPackage);
+		})
+	})
 
 
 
