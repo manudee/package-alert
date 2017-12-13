@@ -24,14 +24,26 @@ module.exports = function(sequelize, DataTypes) {
     //   defaultValue: true
     // },
     uid:{
-	    type: DataTypes.STRING,
-      defaultValue: "Bob"
-    },
-    pwd:{
-      type: DataTypes.STRING,
-      allowNull:true	
-    }
-  });
+     type: DataTypes.STRING,
+     defaultValue: "Bob"
+   },
+   pwd:{
+    type: DataTypes.STRING,
+    allowNull:true	
+  },
+
+  createdAt:{
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW()
+
+  },
+
+  updatedAt:{
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW()
+
+  }
+});
 
   User.associate = function(models) {
     User.hasOne(models.UserInfo, {
