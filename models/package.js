@@ -17,14 +17,26 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "Bob"
     },
     updater:{
-	  type: DataTypes.STRING,
-      defaultValue: "Bob"
-    },
-    pickUpDate:{
-      type: DataTypes.DATE,
-      allowNull:true	
-    }
-  });
+     type: DataTypes.STRING,
+     defaultValue: "Bob"
+   },
+   pickUpDate:{
+    type: DataTypes.DATE,
+    allowNull:true	
+  },
+
+  createdAt:{
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW()
+
+  },
+
+  updatedAt:{
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW()
+
+  }
+});
 
   Package.associate = function(models) {
     Package.belongsTo(models.User, {

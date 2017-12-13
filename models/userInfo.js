@@ -18,6 +18,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: 'Resident',
       len: [1]
+    },
+    createdAt:{
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW()
+
+    },
+
+    updatedAt:{
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW()
+
     }
   });
   
