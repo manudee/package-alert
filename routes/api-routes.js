@@ -10,14 +10,14 @@ module.exports = function(app) {
 
 //associate route
 	app.get("/api/associate/packages", function(req, res) {
-		
+		//joins 
 		db.Package.findAll({
 			include: [
 				{
-					model: db.UserInfo, 
+					model: db.User, 
 						include: [
 					 		{
-					 			model: db.Packge
+					 			model: db.UserInfo
 					 		}
 					 	]
 				}
