@@ -9,7 +9,7 @@ module.exports = function(app) {
 
 
 //associate route
-	app.get("/api/associate/packages", function(req, res) {
+app.get("/api/associate/packages", function(req, res) {
 		//joins 
 		db.Package.findAll({
 			include: [
@@ -30,7 +30,24 @@ module.exports = function(app) {
 
 
 //residents route
+app.get("/api/residents/:id/packages", function(req,res){
 
+	db.Package.findAll({
+		include:
+		{
+			model: db.User,
+
+
+		},
+		 where: {
+        id: req.params.id
+      }
+      
+	}).then(function(dbPackage){
+		res.json(dbPackage);
+	})
+
+})
 
 
 
