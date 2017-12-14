@@ -9,7 +9,7 @@ module.exports = function(app) {
 
 
 //associate route
-	app.get("/api/associate/packages", function(req, res) {
+app.get("/api/associate/packages", function(req, res) {
 		//joins 
 		db.Package.findAll({
 			include: [
@@ -26,16 +26,6 @@ module.exports = function(app) {
 			res.json(dbPackage);
 		})
 	})
-
-
-
-//residents route
-
-
-
-
-
-
 
 
 };
