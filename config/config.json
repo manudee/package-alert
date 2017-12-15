@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password":  "a1423567",
+    "password":  "Bootcamp123",
     "database": "pkg_invenDB",
     "host": "127.0.0.1",
     "dialect": "mysql"

@@ -9,8 +9,11 @@ module.exports = function(app) {
 
 
 //associate route
-	app.get("/api/associate/packages", function(req, res) {
-		//joins 
+//console.log("outside",req.user);
+	app.get("/api/:id/packages", function(req, res) {
+		//joins
+
+		console.log("inside",req.user);
 		db.Package.findAll({
 			include: [
 				{
