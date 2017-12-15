@@ -16,6 +16,7 @@ app.use(passport.initialize());
  
 app.use(passport.session());
 
+const nodemailer = require('nodemailer');
 
 
 //bodyparser
@@ -40,14 +41,17 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 require('./config/passport/passport')(passport, db.User);
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+
 var authroute = require('./routes/auth.js')(app,passport);
 
+
+
+require("./routes/residents-api-routes.js")(app);
 
 
 
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-    
   });
 });

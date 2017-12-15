@@ -9,11 +9,16 @@ module.exports = function(app) {
 
 
 //associate route
+
 //console.log("outside",req.user);
 	app.get("/api/:id/packages", function(req, res) {
 		//joins
 
 		console.log("inside",req.user);
+
+app.get("/api/associate/packages", function(req, res) {
+		//joins 
+
 		db.Package.findAll({
 			include: [
 				{
@@ -29,16 +34,6 @@ module.exports = function(app) {
 			res.json(dbPackage);
 		})
 	})
-
-
-
-//residents route
-
-
-
-
-
-
 
 
 };
