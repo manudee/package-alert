@@ -4,6 +4,7 @@ var exphbs = require('express-handlebars');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+const nodemailer = require('nodemailer');
 
 var db = require("./models");
 
@@ -29,6 +30,5 @@ require("./routes/residents-api-routes.js")(app);
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-    
   });
 });
