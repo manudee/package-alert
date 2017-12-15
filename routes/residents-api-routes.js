@@ -25,8 +25,8 @@ module.exports = function(app) {
 	
 		
 			
-			let packages = {packages: dbPackage.Packages}
-
+			let packages = {packages: dbPackage.Packages};
+			// res.json(packages);
 			res.render('index', packages);
 
 		

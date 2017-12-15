@@ -3,25 +3,31 @@
 		<h1 class="text-center"> Packages for Residents </h1>
 	</div>
 
-<ol>
-
-		{{#each packages}}
+	<div>
 		
-
-		<thead>
+		<table class="table table-striped">
 			<tr>
-				{{this.id}}
-				<th>{{this.packageName}}</th>
-				<th>{{this.status}}</th>
+				<th>#</th>
+				<th>Package ID</th>
+				<th>Package Name</th>
+				<th>Package Status</th>
+				<th>PickedUpState</th>
 			</tr>
-		</thead>
 
+			<tbody>
+				
+				{{#each packages}}
+				<tr>
+					<th scope="row">{{this.id}}</th>
+					<td> {{this.id}} </td>
+					<td> {{this.packageName}} </td>
+					<td> {{this.status}} </td>
+					<td><button data-id="{{this.id}}" class="pickedUp btn btn-success">Picked Up</button></td>
+					{{/each}}
+					
+				</tr>
 
-
-
-	
-		{{/each}}
-	</ol>
-	
-
+			</tbody>
+		</table>
+	</div>
 </div>
