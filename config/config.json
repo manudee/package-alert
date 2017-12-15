@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": "paAdmin",
     "password":  "123456",
     "database": "pkg_invenDB",
     "host": "127.0.0.1",
