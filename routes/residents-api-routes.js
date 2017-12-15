@@ -44,22 +44,12 @@ module.exports = function(app) {
 
 });
 
-	app.post("/api/packages/", function(req,res){
 
-		console.log(req.body);
-// db.Package.create({
-// 	packageName: req.body.packageName,
-// 	status: req.body.status,
-// 	creator: req.body.User.uid,
-// 	updater: req.body.User.uid,
-// 	pickUpDate: req.body.pickUpDate
-// }).then(function(dbPackage){
-// 	console.log(dbPackage);
+
+
+// app.put('/api/residents/:id/packages', function(req,res){
+
+	
 // })
-
-
-})
-
-
 
 }
