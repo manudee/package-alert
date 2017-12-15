@@ -4,8 +4,6 @@ var exphbs = require('express-handlebars');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-const nodemailer = require('nodemailer');
-
 var db = require("./models");
 
 //bodyparser
@@ -24,6 +22,7 @@ app.use(express.static("public"));
 // require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
+require("./routes/api-package-alert.js")(app);
 require("./routes/residents-api-routes.js")(app);
 
 
