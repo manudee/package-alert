@@ -3,28 +3,50 @@ var db = require('../models');
 
 module.exports = function(app) {
 
-app.get("/api/residents/:id/packages", function(req,res){
+	app.get("/api/residents/:id/packages", function(req,res){
 
-	db.Package.findAll({
+		var condition = req.params.id;
+
+	// db.Package.findAll({
+	// 	include:
+	// 	{
+	// 		model: db.User,
+
+
+	// 	},
+	// 	 where: {
+ //        id: req.params.id
+ //      }
+ 
+	// }).then(function(dbPackage){
+	// 	res.json(dbPackage);
+
+	// })
+
+
+	db.User.findAll({
 		include:
 		{
-			model: db.User,
+			model: db.Package,
 
 
 		},
-		 where: {
-        id: req.params.id
-      }
-      
+		where: {
+			id: req.params.id
+		}
+		
 	}).then(function(dbPackage){
 		res.json(dbPackage);
+
 	})
+
+
 
 });
 
-app.post("/api/packages/", function(req,res){
+	app.post("/api/packages/", function(req,res){
 
-console.log(req.body);
+		console.log(req.body);
 // db.Package.create({
 // 	packageName: req.body.packageName,
 // 	status: req.body.status,
