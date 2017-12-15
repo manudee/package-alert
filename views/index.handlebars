@@ -1,0 +1,17 @@
+<div>{{db}}</div>
+<ul>
+
+{{!--   {{#each dbPackage}} --}}
+    {{!-- {{#if status}} --}}
+      {{> associates/associates-block   status=false}}
+    {{!-- {{/if}} --}}
+{{!--   {{/each}} --}}
+</ul>
+
+<ul>
+  {{#each dbPackage }}
+    {{!-- {{#unless status}} --}}
+      {{> residents/residents-block dbPackage status=true}}
+    {{!-- {{/unless}} --}}
+  {{/each}}
+</ul>
