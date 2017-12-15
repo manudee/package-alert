@@ -21,9 +21,9 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
 
-// require("./routes/api-routes.js")(app);
+ require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+//require("./routes/associates-api-routes.js")(app);
 require("./routes/residents-api-routes.js")(app);
 
 

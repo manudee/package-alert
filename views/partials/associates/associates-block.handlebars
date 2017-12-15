@@ -1,0 +1,29 @@
+<div class="container">
+	<h1> Hello Associate!</h1>
+	<ul>
+		{{#each dbPackage}}
+			<li>{{dataValues.packageName}}</li>
+			<li>{{dataValues.status}}</li>
+			<li>{{dataValues.updater}}</li>
+			<li>{{dataValues.createdAt}}</li>
+		{{/each}}
+	</ul>
+
+    <div id='login'>
+      <button type="button" data-toggle="modal" data-target="#create-modal" class="btn btn-success center-block">Create New Package</button>
+    </div>
+
+
+	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+	        <div class="modal-dialog">
+	        <div class="loginmodal-container">
+	          <h1 class='text-center'>New Package</h1><br>
+	          <form class='text-center'>
+	          <input type="text" name="packageName" placeholder="Apartment number">
+	          <input type="text" name="creater" placeholder="Employee name">
+	          <input type="submit" name="create" class="login loginmodal-submit" value="create">
+	          </form>
+	        </div>
+	      </div>
+	</div>
+</div>
