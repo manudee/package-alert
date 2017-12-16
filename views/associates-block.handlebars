@@ -40,13 +40,13 @@
 
 
 	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	        <div class="modal-dialog">
+	      <div class="modal-dialog">
 	        <div class="loginmodal-container">
 	          <h1 class='text-center'>New Package</h1><br>
-	          <form class='text-center'>
-	          <input type="text" name="packageName" placeholder="Apartment number">
-	          <input type="text" name="creater" placeholder="Employee name">
-	          <input type="submit" name="create" class="login loginmodal-submit" value="create">
+	          <form class='text-center' method="post" action="/api/create" id="createForm">
+	          <input type="text" name="packageName" placeholder="Package Name">
+	          <input type="text" name="Rid" placeholder="Resident ID">
+	          <input type="submit" name="create" class=" loginmodal-submit" value="Create">
 	          </form>
 	        </div>
 	      </div>
