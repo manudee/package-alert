@@ -4,14 +4,35 @@
       <h1 class='text-center'>Welcome to Package Alert!</h1>
     </div>
 	<h1> Hello Associate!</h1>
-	<ul>
-		{{#each dbPackage}}
-			<li>{{dataValues.packageName}}</li>
-			<li>{{dataValues.status}}</li>
-			<li>{{dataValues.updater}}</li>
-			<li>{{dataValues.createdAt}}</li>
-		{{/each}}
-	</ul>
+	<table class="table table-striped">
+
+		<tr>
+			<th>Resident name</th>
+			<th>Building Number</th>
+			<th>Created By:</th>
+			<th>Created Date:</th>
+			<th></th>
+			<th></th>
+		</tr>
+
+		<tbody>
+
+			{{#each dbPackage}}
+			<tr>
+
+					<td>{{this.User.name}}</td>
+					<td>{{this.User.UserInfo.number}}</td>
+					<td>{{this.updater}}</td>
+					<td>{{this.createdAt}}</td>
+					<td><button data-id="{{this.id}}" id= "pickedUp" class="pickedUp btn btn-success">Picked Up</button></td></td>
+					<td><button data-id="{{this.id}}" id= "sendEmail" class="pickedUp btn btn-success">Send Email</button></td></td>
+			</tr>
+			{{/each}}
+
+		</tbody>
+
+	</table>
+
 
     <div id='login'>
       <button type="button" data-toggle="modal" data-target="#create-modal" class="btn btn-success center-block">Create New Package</button>
