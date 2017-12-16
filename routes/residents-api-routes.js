@@ -7,49 +7,65 @@ module.exports = function(app) {
 
 		var condition = req.params.id;
 
-	// db.Package.findAll({
-	// 	include:
-	// 	{
-	// 		model: db.User,
-
-
-	// 	},
-	// 	 where: {
- //        id: req.params.id
- //      }
- 
-	// }).then(function(dbPackage){
-	// 	res.json(dbPackage);
-
-	// })
-
-
-	db.User.findAll({
-		include:
-		{
-			model: db.Package,
-
-
-		},
-		where: {
-			id: req.params.id
-		}
-		
-	}).then(function(dbPackage){
-		res.json(dbPackage);
-
-	})
 
 
 
-});
+		db.User.find({
+			where: {
+				id: req.params.id
+			},
+			include:
+			{
+				model: db.Package
+			}
 
-
-
-
-// app.put('/api/residents/:id/packages', function(req,res){
+		}).then(function(dbPackage){
+			// res.json(dbPackage);
 
 	
-// })
+		
+			
+			let packages = {packages: dbPackage.Packages};
+			// res.json(packages);
+			res.render('index', packages);
+
+		
+
+		})
+
+
+
+	});
+
+
+
+
+	app.put('/api/residents/:id/packages', function(req,res){
+
+		db.Package.update({
+			pickUpDate: '12/14/2017',
+			status: 0
+		},
+
+		{
+			where: {
+				id: 1
+			}
+
+		}).then(function(updatedPackage){
+			res.json(updatedPackage);
+
+
+
+		});
+
+
+
+
+
+
+
+
+	});
 
 }
