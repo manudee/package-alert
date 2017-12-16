@@ -1,14 +1,16 @@
 var db = require('../models');
-
+var passport = require("passport");
+var pass = require('../config/passport/passport.js')(passport, db.User);
 
 module.exports = function(app) {
 
-	app.get("/api/residents/:id/packages", function(req,res){
 
-		var condition = req.params.id;
+// app.get('/api/residents', function(req,res){
 
-
-
+// 	console.log(req.user);
+	app.get("/landingPage/residents/packages/:id", function(req,res){
+		console.log("is resident api",req.user);
+	// req.params.id  = req.user.id;
 
 		db.User.find({
 			where: {
@@ -20,7 +22,8 @@ module.exports = function(app) {
 			}
 
 		}).then(function(dbPackage){
-			// res.json(dbPackage);
+			//res.json(dbPackage);
+			console.log(dbPackage)
 
 	
 		
@@ -38,7 +41,7 @@ module.exports = function(app) {
 	});
 
 
-
+// })
 
 	app.put('/api/residents/:id/packages', function(req,res){
 

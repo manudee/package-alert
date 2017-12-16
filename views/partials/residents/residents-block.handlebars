@@ -1,1 +1,36 @@
 <h1> Hello Resident! </h1>
+
+
+<div class = 'container'>
+	<div class="row">
+		<h1 class="text-center"> Packages for Residents </h1>
+	</div>
+
+	<div>
+		
+		<table class="table table-striped">
+			<tr>
+				<th>#</th>
+				<th>Package ID</th>
+				<th>Package Name</th>
+				<th>Package Status</th>
+				<th>PickedUpState</th>
+			</tr>
+
+			<tbody>
+				
+				{{#each packages}}
+				<tr>
+					<th scope="row">{{this.id}}</th>
+					<td> {{this.id}} </td>
+					<td> {{this.packageName}} </td>
+					<td> {{this.status}} </td>
+					<td><button data-id="{{this.id}}" class="pickedUp btn btn-success">Picked Up</button></td>
+					{{/each}}
+					
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</div>

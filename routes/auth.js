@@ -10,6 +10,7 @@ module.exports = function(app,passport){
 
 
 
+
 app.get('/decision', function(req, res) {
 	if (req.user.position === 'Associate') {
 		res.redirect('/api/packages/associate')
@@ -26,7 +27,9 @@ app.get('/decision', function(req, res) {
 
 
 	app.post('/authenticate', passport.authenticate('local-signin',{
+
 			successRedirect:"/decision",
+
 			failureRedirect:"/"
 
 		})

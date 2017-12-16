@@ -12,6 +12,7 @@ module.exports = function(app) {
 
 
 
+
 app.get("/api/packages/associate", function(req, res) {
 		//joins
 		db.Package.findAll({
@@ -30,4 +31,5 @@ app.get("/api/packages/associate", function(req, res) {
     		res.render("index", {'dbPackage':dbPackage});
 		})
 	})
+
 }

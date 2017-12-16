@@ -1,53 +1,20 @@
 
-<div class = 'container'>
-	<div class="row">
-		<h1 class="text-center"> Packages for Residents </h1>
-	</div>
-
-	<div>
-		
-		<table class="table table-striped">
-			<tr>
-				<th>#</th>
-				<th>Package ID</th>
-				<th>Package Name</th>
-				<th>Package Status</th>
-				<th>PickedUpState</th>
-			</tr>
-
-			<tbody>
-				
-				{{#each packages}}
-				<tr>
-					<th scope="row">{{this.id}}</th>
-					<td> {{this.id}} </td>
-					<td> {{this.packageName}} </td>
-					<td> {{this.status}} </td>
-					<td><button data-id="{{this.id}}" class="pickedUp btn btn-success">Picked Up</button></td>
-					{{/each}}
-					
-				</tr>
-
-			</tbody>
-		</table>
-	</div>
-</div>
 
 <div>{{db}}</div>
 <ul>
 
 {{!--   {{#each dbPackage}} --}}
     {{!-- {{#if status}} --}}
-      {{> associates/associates-block   status=false}}
+      {{> associates/associates-block   status=true}}
     {{!-- {{/if}} --}}
 {{!--   {{/each}} --}}
 </ul>
 
-<ul>
-  {{#each dbPackage }}
+<ol>
+  {{!-- {{#each dbPackage }} --}}
     {{!-- {{#unless status}} --}}
-      {{> residents/residents-block dbPackage status=true}}
+      {{> residents/residents-block status=false}}
     {{!-- {{/unless}} --}}
-  {{/each}}
-</ul>
+  {{!-- {{/each}} --}}
+</ol>
 
