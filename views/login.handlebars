@@ -11,15 +11,23 @@
 
 
 
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-        <div class="loginmodal-container">
-          <h1 class='text-center'>Login to Your Account</h1><br>
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+           <div class="loginmodal-container">
+          <div class="modal-header">
+          <h3 class='text-center'>Login to Your Account</h3><br>
+          </div>
+          <div class="modal-body">
           <form class='text-center' method="post" action='/authenticate' id="loginForm">
           <input type="text" name="user" placeholder="Username">
           <input type="password" name="pass" placeholder="Password">
+          </div>
+          <div class="modal-footer">
           <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+        </div>
           </form>
+        </div>
         </div>
       </div>
 </div>

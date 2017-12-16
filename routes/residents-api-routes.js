@@ -40,6 +40,7 @@ module.exports = function(app) {
 	app.put('/api/residents/:id/packages', function(req,res){
 
 
+
 		console.log("Request is " , req.body);
 		console.log("Request picked up date is " , req.body.pickUpDate);
 
@@ -73,6 +74,7 @@ module.exports = function(app) {
 
 
 	});
+
 
 
 }
