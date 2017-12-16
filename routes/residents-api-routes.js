@@ -37,7 +37,7 @@ module.exports = function(app) {
 	});
 
 
-	app.put('/api/residents/:id/packages', function(req,res){
+	app.put('/api/residents/packages/:id', function(req,res){
 
 
 
@@ -50,7 +50,8 @@ module.exports = function(app) {
 
 		db.Package.update({
 			pickUpDate: req.body.pickUpDate,
-			status: req.body.status
+			status: req.body.status,
+			updater: req.user.name
 		},
 
 		{
