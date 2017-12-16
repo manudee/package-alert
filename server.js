@@ -41,7 +41,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
 // require("./routes/api-routes.js")(app);
 require('./config/passport/passport')(passport, db.User);
-require("./routes/html-routes.js")(app);
+// require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 require("./routes/api-package-alert.js")(app);

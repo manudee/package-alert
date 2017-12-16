@@ -14,6 +14,14 @@ app.get('/landingPage', function(req,res){
 	res.render('temp')
 });
 
+app.get('/decision', function(req, res) {
+	if (req.user.position === 'Associate') {
+		res.redirect('/api/packages/associate')
+	}
+	else {
+		res.redirect('/api/packages/resident')
+	}
+})
 
 	// app.get('/', r.signin);
 	app.get('/', function(req, res) {
@@ -22,7 +30,7 @@ app.get('/landingPage', function(req,res){
 
 
 	app.post('/authenticate', passport.authenticate('local-signin',{
-			successRedirect:"/landingPage",
+			successRedirect:"/decision",
 			failureRedirect:"/"
 
 		})
