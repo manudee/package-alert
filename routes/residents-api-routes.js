@@ -52,7 +52,8 @@ module.exports = function(app) {
 
 		{
 			where: {
-				id: 1
+				userid: req.user.id,
+				id: 
 			}
 
 		}).then(function(updatedPackage){

@@ -6,23 +6,30 @@ var authcontroller = require('../controllers/login_controller.js');
 module.exports = function(app,passport){
 
 
-	//app.get('/signup', authcontroller.signup);
-
-app.get('/landingPage/residents/packages', function(req,res){
-	console.log("hey it worked");
-	//console.log(res);
-	res.render('index')
-});
+	
 
 
-	// app.get('/', r.signin);
+
+
+app.get('/decision', function(req, res) {
+	if (req.user.position === 'Associate') {
+		res.redirect('/api/packages/associate')
+	}
+	else {
+		res.redirect('/api/packages/resident')
+	}
+})
+
+
 	app.get('/', function(req, res) {
 		res.render('login')
 	})
 
 
 	app.post('/authenticate', passport.authenticate('local-signin',{
-			successRedirect:"/landingPage/residents/packages",
+
+			successRedirect:"/decision",
+
 			failureRedirect:"/"
 
 		})
@@ -35,4 +42,3 @@ app.get('/landingPage/residents/packages', function(req,res){
 	})
 }
 
-//res.redirect('/landingPage')
