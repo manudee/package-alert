@@ -1,3 +1,4 @@
+
 <div class = 'container'>
 	<div class="row">
 		<h1 class="text-center"> Packages for Residents </h1>
@@ -31,3 +32,22 @@
 		</table>
 	</div>
 </div>
+
+<div>{{db}}</div>
+<ul>
+
+{{!--   {{#each dbPackage}} --}}
+    {{!-- {{#if status}} --}}
+      {{> associates/associates-block   status=false}}
+    {{!-- {{/if}} --}}
+{{!--   {{/each}} --}}
+</ul>
+
+<ul>
+  {{#each dbPackage }}
+    {{!-- {{#unless status}} --}}
+      {{> residents/residents-block dbPackage status=true}}
+    {{!-- {{/unless}} --}}
+  {{/each}}
+</ul>
+
