@@ -6,13 +6,9 @@ var authcontroller = require('../controllers/login_controller.js');
 module.exports = function(app,passport){
 
 
-	//app.get('/signup', authcontroller.signup);
+	
 
-app.get('/landingPage', function(req,res){
-	console.log("hey it worked");
-	console.log(req.user);
-	res.render('temp')
-});
+
 
 app.get('/decision', function(req, res) {
 	if (req.user.position === 'Associate') {
@@ -23,7 +19,7 @@ app.get('/decision', function(req, res) {
 	}
 })
 
-	// app.get('/', r.signin);
+
 	app.get('/', function(req, res) {
 		res.render('login')
 	})
@@ -43,4 +39,3 @@ app.get('/decision', function(req, res) {
 	})
 }
 
-//res.redirect('/landingPage')
