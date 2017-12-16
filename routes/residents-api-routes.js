@@ -44,32 +44,22 @@ module.exports = function(app) {
 // })
 
 	app.put('/api/residents/:id/packages', function(req,res){
-
-		db.Package.update({
-			pickUpDate: '12/14/2017',
-			status: 0
-		},
-
-		{
-			where: {
-				userid: req.user.id,
-				id: 
-			}
-
-		}).then(function(updatedPackage){
-			res.json(updatedPackage);
-
-
-
-		});
-
-
-
-
-
-
-
-
-	});
+        console.log("Request is " , req.body);
+        console.log("Request picked up date is " , req.body.pickUpDate);
+        console.log("Request status is " , req.body.status);
+        console.log("Req user is " , req.user.id)
+        db.Package.update({
+            pickUpDate: req.body.pickUpDate,
+            status: req.body.status
+        },
+        {
+            where: {
+                userid: req.user.id,
+                id: req.params.id
+            }
+        }).then(function(updatedPackage){
+            res.json(updatedPackage);
+        });
+    });
 
 }
