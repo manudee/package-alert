@@ -51,7 +51,7 @@ var authroute = require('./routes/auth.js')(app,passport);
 
 
 
-//require("./routes/associates-api-routes.js")(app);
+require("./routes/associates-api-routes.js")(app);
 
 require("./routes/residents-api-routes.js")(app);
 
