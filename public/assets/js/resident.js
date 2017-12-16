@@ -1,8 +1,12 @@
 $(function() {
 
-	$("body").on("click",".pickedUp", function(event) {
+
+	$("body").on("click",".notPickedUp", function(event) {
 		event.preventDefault();
 		var id = $(this).data("id");
+		var buttonId = $(this).attr('id');
+		console.log("buttonId is " + buttonId);
+
 
 		var residentPkgState = {
 
@@ -20,8 +24,11 @@ $(function() {
 		function() {
 			console.log("changed package state to ", residentPkgState);
 
-        location.reload();
-    });
+
+
+			location.reload();
+
+		});
 
 	});
 
