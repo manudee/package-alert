@@ -8,10 +8,10 @@ module.exports = function(app,passport){
 
 	//app.get('/signup', authcontroller.signup);
 
-app.get('/landingPage', function(req,res){
+app.get('/landingPage/residents/packages', function(req,res){
 	console.log("hey it worked");
-	console.log(req.user);
-	res.render('temp')
+	//console.log(res);
+	res.render('index')
 });
 
 
@@ -22,7 +22,7 @@ app.get('/landingPage', function(req,res){
 
 
 	app.post('/authenticate', passport.authenticate('local-signin',{
-			successRedirect:"/landingPage",
+			successRedirect:"/landingPage/residents/packages",
 			failureRedirect:"/"
 
 		})

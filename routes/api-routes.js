@@ -11,10 +11,10 @@ module.exports = function(app) {
 //associate route
 
 //console.log("outside",req.user);
-	app.get("/api/:id/packages", function(req, res) {
+app.get("/api/:id/packages", function(req, res) {
 		//joins
 
-		console.log("inside",req.user);
+		//console.log("inside",req.user);
 
 app.get("/api/associate/packages", function(req, res) {
 		//joins 
@@ -35,4 +35,6 @@ app.get("/api/associate/packages", function(req, res) {
     		res.render("index", {'dbPackage':dbPackage});
 		})
 	})
-};
+});
+
+}
