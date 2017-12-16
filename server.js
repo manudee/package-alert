@@ -16,7 +16,9 @@ app.use(passport.initialize());
  
 app.use(passport.session());
 
+
 const nodemailer = require('nodemailer');
+
 
 
 //bodyparser
@@ -42,12 +44,15 @@ require('./config/passport/passport')(passport, db.User);
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
+require("./routes/api-package-alert.js")(app);
+
 var authroute = require('./routes/auth.js')(app,passport);
 
 
 
 
 //require("./routes/associates-api-routes.js")(app);
+
 require("./routes/residents-api-routes.js")(app);
 
 
