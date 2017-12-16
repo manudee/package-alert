@@ -28,8 +28,9 @@
 					<th scope="row">{{this.id}}</th>
 					<td> {{this.id}} </td>
 					<td> {{this.packageName}} </td>
-					<td> {{this.status}} </td>
-					<td><button data-id="{{this.id}}" class="pickedUp btn btn-success">Picked Up</button></td>
+					<td> {{#unless this.status}} <p>Not Picked up </p>{{/unless}}
+						 {{#if this.status}} <p> Picked Up </p> {{/if}} </td>
+					<td>{{#unless this.status}}<button id = "{{this.id}}" data-id="{{this.id}}" class="notPickedUp btn btn-success">Not Picked Up</button>{{/unless}}</td>
 					{{/each}}
 					
 				</tr>
