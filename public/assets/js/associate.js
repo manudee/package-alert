@@ -17,7 +17,7 @@ $(function() {
 
 
 
-		$.ajax("/api/residents/packages/" + id, {
+		$.ajax("/api/associates/packages/" + buttonId, {
 			type: "PUT",
 			data: residentPkgState
 		}).then(
@@ -26,7 +26,7 @@ $(function() {
 
 
 
-			location.reload();
+			// location.reload();
 
 		});
 
