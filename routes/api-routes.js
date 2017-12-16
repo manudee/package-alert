@@ -16,19 +16,21 @@ module.exports = function(app) {
 app.get("/api/packages/associate", function(req, res) {
 		//joins
 		db.Package.findAll({
-			include: [
-				{
-					model: db.User, 
-						include: [
-					 		{
-					 			model: db.UserInfo
-					 		}
-					 	]
-				}
-			]
+
+		// db.Package.findAll({
+		// 	include: [
+		// 		{
+		// 			model: db.User, 
+		// 				include: [
+		// 			 		{
+		// 			 			model: db.UserInfo
+		// 			 		}
+		// 			 	]
+		// 		}
+		// 	]
 		}).then(function(dbPackage) {
 			//res.json(dbPackage);
-    		res.render("index", {'dbPackage':dbPackage});
+    		res.render("associates-block", {'dbPackage':dbPackage});
 		})
 	})
 
