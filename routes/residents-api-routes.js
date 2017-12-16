@@ -37,7 +37,6 @@ module.exports = function(app) {
 	});
 
 
-
 	app.put('/api/residents/:id/packages', function(req,res){
 
 
@@ -74,5 +73,6 @@ module.exports = function(app) {
 
 
 	});
+
 
 }
