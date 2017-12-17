@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require('express-handlebars');
 var app = express();
-var PORT = process.env.PORT || 8087;
+var PORT = process.env.PORT || 8084;
 var env = require('dotenv').load();
 var db = require("./models");
 var passport = require("passport");
@@ -24,8 +24,8 @@ const nodemailer = require('nodemailer');
 //bodyparser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(bodyParser.text());
-//app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // For Passport
 
 

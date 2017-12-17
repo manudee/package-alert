@@ -27,7 +27,7 @@ module.exports = function(app) {
 			
 			let packages = {packages: dbPackage.Packages};
 			res.render('residents-block', packages);
-
+			// res.json(dbPackage);
 		
 
 		})

@@ -42,6 +42,8 @@
 		</tbody>
 
 	</table>
+<div>
+	
 
 
     <div id='login'>
@@ -49,16 +51,29 @@
     </div>
 
 
-	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	      <div class="modal-dialog">
-	        <div class="loginmodal-container">
-	          <h1 class='text-center'>New Package</h1><br>
+	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
+	      <div class="modal-dialog" role="document">
+	      	 <div class="modal-content">
+	        <div class="newpackagemodal-container">
+	        	<div class="modal-header">
+	          <h3 class='text-center'>New Package</h3>
+	      		</div>
+	      		<div class="modal-body">
 	          <form class='text-center' method="post" action="/api/create" id="createForm">
 	          <input type="text" name="packageName" placeholder="Package Name">
-	          <input type="text" name="Rid" placeholder="Resident ID">
+	          <input type="text" name="RNam" placeholder="Resident ID">
+	         {{!--  <select>
+                {{#each dbDropdown}}
+                <option value="{{id}}">{{id}}</option>
+                {{/each}}
+            </select> --}}
+        </div>
+        <div class="modal-footer">
 	          <input type="submit" name="create" class=" loginmodal-submit" value="Create">
 	          </form>
+	     </div>     
 	        </div>
+	    </div>
 	      </div>
 	</div>
 	<a id="logout" class="btn" href="/signout">logout</a>
