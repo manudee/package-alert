@@ -8,7 +8,7 @@ $(function() {
 		console.log("buttonId is " + buttonId);
 
 
-		var residentPkgState = {
+		var associatePkgState = {
 
 			pickUpDate: new Date(),
 			status: 1
@@ -17,12 +17,14 @@ $(function() {
 
 
 
-		$.ajax("/api/associates/packages/" + buttonId, {
+
+		$.ajax("/api/packages/associate/" + id, {
+
 			type: "PUT",
-			data: residentPkgState
+			data: associatePkgState
 		}).then(
 		function() {
-			console.log("changed package state to ", residentPkgState);
+			console.log("changed package state to ", associatePkgState);
 
 
 
