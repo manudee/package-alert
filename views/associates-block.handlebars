@@ -1,0 +1,81 @@
+<div class="container">
+	<div class="container">
+    <div class="jumbotron">
+      <h1 class='text-center'>Welcome to Package Alert!</h1>
+    </div>
+	<h1><center> Hello Associate!</center></h1>
+	<hr>
+	<table class="table table-striped">
+
+		<tr>
+			<th>Package Name</th>
+			<th>Resident Name</th>
+			<th>Apartment Number</th>
+			<th>Building Number</th>
+			<th>Created By</th>
+			<th>Created Date</th>
+			<th>Updator</th>
+			<th>Updated Date</th>
+			<th>Status</th>
+			<th></th>
+			<th></th>
+		</tr>
+
+		<tbody>
+
+			{{#each dbPackage}}
+			<tr>
+				<td>{{this.packageName}}</td>
+				<td>{{this.User.name}}</td>
+				<td>{{this.User.UserInfo.building}}
+				<td>{{this.User.UserInfo.number}}</td>
+				<td>{{this.updater}}</td>
+				<td>{{this.createdAt}}</td>
+				<td>{{this.updater}}</td>
+				<td>{{this.updatedAt}}</td>
+				<td> {{#unless this.status}} <p>Not Picked up </p>{{/unless}}
+					{{#if this.status}} <p> Picked Up </p> {{/if}} </td>
+				<td>{{#unless this.status}}<button id = "{{this.id}}" data-id="{{this.id}}" class="notPickedUp btn btn-success">Not Picked Up</button>{{/unless}}</td>
+				<td><button data-id="{{this.id}}" class="sendEmail btn btn-success">Send Email</button></td>
+			</tr>
+			{{/each}}
+
+		</tbody>
+
+	</table>
+<div>
+	
+
+
+    <div id='login'>
+      <button type="button" data-toggle="modal" data-target="#create-modal" class="btn btn-success center-block">Create New Package</button>
+    </div>
+
+
+	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
+	      <div class="modal-dialog" role="document">
+	      	 <div class="modal-content">
+	        <div class="newpackagemodal-container">
+	        	<div class="modal-header">
+	          <h3 class='text-center'>New Package</h3>
+	      		</div>
+	      		<div class="modal-body">
+	          <form class='text-center' method="post" action="/api/create" id="createForm">
+	          <input type="text" name="packageName" placeholder="Package Name">
+	         {{!--  <input type="text" name="RNam" placeholder="Resident ID"> --}}
+	          <select name="residentList" id="residentList">
+                {{#each dbDropdown}}
+                <option value="{{id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="modal-footer">
+	          <input type="submit" name="create" class=" loginmodal-submit" value="Create">
+	          </form>
+	     </div>     
+	        </div>
+	    </div>
+	      </div>
+	</div>
+	<a id="logout" class="btn" href="/signout">logout</a>
+</div>
