@@ -8,6 +8,7 @@
 	<table class="table table-striped">
 
 		<tr>
+			<th>Package Name</th>
 			<th>Resident Name</th>
 			<th>Apartment Number</th>
 			<th>Building Number</th>
@@ -24,7 +25,7 @@
 
 			{{#each dbPackage}}
 			<tr>
-
+				<td>{{this.packageName}}</td>
 				<td>{{this.User.name}}</td>
 				<td>{{this.User.UserInfo.building}}
 				<td>{{this.User.UserInfo.number}}</td>

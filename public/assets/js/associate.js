@@ -17,7 +17,9 @@ $(function() {
 
 
 
+
 		$.ajax("/api/packages/associate/" + id, {
+
 			type: "PUT",
 			data: associatePkgState
 		}).then(
@@ -26,7 +28,7 @@ $(function() {
 
 
 
-			location.reload();
+			// location.reload();
 
 		});
 
