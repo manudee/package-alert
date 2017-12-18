@@ -98,10 +98,36 @@ app.put('/api/packages/associate/:id', function(req,res){
 
 //resident get route
 	app.get("/api/packages/resident", function(req,res){
-		console.log("is resident api",req.user);
+		// console.log("is resident api",req.user);
 
 
-		db.User.find({
+		// db.User.find({
+		// 	where: {
+		// 		id: req.user.id
+		// 	},
+		// 	include:
+		// 	{
+		// 		model: db.Package
+		// 	}
+
+		// }).then(function(dbPackage){
+
+		
+
+		// 	// res.json(dbPackage);
+		
+			
+		// 	let packages = {packages: dbPackage.Packages, name: dbPackage.name};
+		// 	res.render('residents-block', packages);
+		// 	// res.json(dbPackage);
+		
+
+		// });
+
+
+		Promise.all([
+
+	db.User.find({
 			where: {
 				id: req.user.id
 			},
@@ -114,15 +140,35 @@ app.put('/api/packages/associate/:id', function(req,res){
 
 		
 
-			// res.json(dbPackage.name);
-		
-			
-			let packages = {packages: dbPackage.Packages, name: dbPackage.name};
-			res.render('residents-block', packages);
 			// res.json(dbPackage);
 		
+			
+	let packages = {packages: dbPackage.Packages, name: dbPackage.name};
+	// res.json(packages);
+	return packages;
+}),
+		db.User.find({
+			where: {
+				id: req.user.id
+			},
+				include: [{
+					model: db.UserInfo
+				}]
+		}).then(function(dbUserDetails){
+			// res.json(dbUserDetails);
+			return dbUserDetails;
+		})
+	]).then(function(result){
 
+		// res.json(result);
+		res.render('residents-block',
+		{
+			'packages': result[0],
+			'dbUserDetails': result[1]
 		});
+	});
+
+
 
 	});
 
