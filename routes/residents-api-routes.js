@@ -22,10 +22,10 @@ module.exports = function(app) {
 
 		
 
-	
+			// res.json(dbPackage.name);
 		
 			
-			let packages = {packages: dbPackage.Packages};
+			let packages = {packages: dbPackage.Packages, name: dbPackage.name};
 			res.render('residents-block', packages);
 			// res.json(dbPackage);
 		
