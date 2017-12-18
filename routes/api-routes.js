@@ -16,6 +16,7 @@ module.exports = function(app) {
 app.get("/api/packages/associate", function(req, res) {
 		//joins
 		
+		Promise.all([
 
 		db.Package.findAll({
 			include: [
@@ -28,19 +29,33 @@ app.get("/api/packages/associate", function(req, res) {
 					 	]
 				}
 			]
-		}).then(function(dbPackage) {
+		}).then(function(dbPackage){
+			return dbPackage
+		}),
+		db.User.findAll({
+							include : [
+							{
+								model:db.UserInfo
+							}
+							]
+						}).then(function(dbDropdown){
+								console.log(dbDropdown);
+								return dbDropdown
+							})
+
+
+
+
+		]).then(function(result) {
 			// res.json(dbPackage);
-    		res.render("associates-block", {'dbPackage':dbPackage});
+    		res.render("associates-block", 
+    			{'dbPackage':result[0],
+    			'dbDropdown':result[1]	
+    	});
 
     		// 	app.get("/api/packages/associate", function(req, res) {
 
-    		// 		db.User.findAll({
-						// 	include : [
-						// 	{
-						// 		model:db.UserInfo
-						// 	}
-						// 	]
-						// }).then(function(dbDropdown){
+    				
 
 						//   console.log('dropdown',dbDropdown);
 						//   res.json(dbDropdown);
@@ -49,7 +64,7 @@ app.get("/api/packages/associate", function(req, res) {
 						// })
 
 
-    		// 	})
+    		// 	
 
 
 		})
@@ -57,6 +72,33 @@ app.get("/api/packages/associate", function(req, res) {
 
 
 	})
+
+// Promise.all([
+//   User.findAll().then(function(users){
+//     return users;
+//   }),
+//   Packages.findAll().then(function(packages){
+//     return packages;
+//   })
+// ]).then(function(result){
+//   //Render handlebars with users and packages data
+//   res.render('index', {
+//     'users':result[0],
+//     'packages':result[1]
+//   });
+// }).catch(function(err){
+//   //Returns first promise failure and doesn' render anything.
+//   res.status(500);
+//   res.send(err)
+// })
+
+
+
+
+
+
+
+
 
 app.put('/api/packages/associate/:id', function(req,res){
 

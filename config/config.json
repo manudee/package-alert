@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "paadmin",
-    "password":  "123456",
+    "username": "root",
+    "password":  "Bootcamp123",
 
     "database": "pkg_invenDB",
     "host": "127.0.0.1",
