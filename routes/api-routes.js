@@ -47,56 +47,19 @@ app.get("/api/packages/associate", function(req, res) {
 
 
 		]).then(function(result) {
-			// res.json(dbPackage);
+			
     		res.render("associates-block", 
     			{'dbPackage':result[0],
     			'dbDropdown':result[1]	
     	});
 
-    		// 	app.get("/api/packages/associate", function(req, res) {
-
-    				
-
-						//   console.log('dropdown',dbDropdown);
-						//   res.json(dbDropdown);
-						//   res.render("associates-block", {'dbDropdown':dbDropdown});
-
-						// })
-
-
-    		// 	
-
+    		
 
 		})
 
 
 
 	})
-
-// Promise.all([
-//   User.findAll().then(function(users){
-//     return users;
-//   }),
-//   Packages.findAll().then(function(packages){
-//     return packages;
-//   })
-// ]).then(function(result){
-//   //Render handlebars with users and packages data
-//   res.render('index', {
-//     'users':result[0],
-//     'packages':result[1]
-//   });
-// }).catch(function(err){
-//   //Returns first promise failure and doesn' render anything.
-//   res.status(500);
-//   res.send(err)
-// })
-
-
-
-
-
-
 
 
 
