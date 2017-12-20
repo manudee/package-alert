@@ -1,66 +1,69 @@
 <div class="container">
-	<div class="container">
-    <div class="jumbotron">
-      <h1 class='text-center'>Welcome to Package Alert!</h1>
-    </div>
-	<h1><center> Hello Associate!</center></h1>
-	<hr>
-	<div id='login'>
-      <button type="button" data-toggle="modal" data-target="#create-modal" class="btn btn-success ">Create New Package</button>
-      <button id = "sendAll" class="sendEmail btn btn-success">Send Email</button>	
-    </div>
-    <hr>
 
+	<div class="container"> <!-- Nested container -->
 
-	<table class="table table-striped">
+	    <div class="jumbotron">
+	      <h1 class='mainHeader text-center'>Welcome to Package Alert!</h1>
+	      <a id="logout" class="btn" href="/signout">Logout</a>
+	    </div>
 
-		<tr>
-			<th>Package Name</th>
-			<th>Resident Name</th>
-			<th>Apartment Number</th>
-			<th>Building Number</th>
-			<th>Created By</th>
-			<th>Created Date</th>
-			<th>Updator</th>
-			<th>Updated Date</th>
-			<th>Status</th>
-			<th></th>
-			<th></th>
-		</tr>
+		<h1><center> Hello Associate!</center></h1>
+		<h3><center>Logged in as {{userName}}</center></h3>
 
-		<tbody>
+		<br>
 
-			{{#each dbPackage}}
+		<div id='login'>
+			<center>
+				<button type="button" data-toggle="modal" data-target="#create-modal" class="btn btn-success ">Create New Package</button>
+				<button id = "sendAll" class="sendEmail btn btn-success"><span class ="glyphicon glyphicon-envelope" aria-hidden="true"></span> Send Email</button>	
+			</center>
+   		</div>
+   		<hr>
+
+		<table class="table table-striped">
+
 			<tr>
-				<td>{{this.packageName}}</td>
-				<td>{{this.User.name}}</td>
-				<td>{{this.User.UserInfo.building}}
-				<td>{{this.User.UserInfo.number}}</td>
-				<td>{{this.updater}}</td>
-				<td>{{this.createdAt}}</td>
-				<td>{{this.updater}}</td>
-				<td>{{this.updatedAt}}</td>
-				<td> {{#unless this.status}} <p>Not Picked up </p>{{/unless}}
-					{{#if this.status}} <p> Picked Up </p> {{/if}} </td>
-				<td>{{#unless this.status}}<button id = "{{this.id}}" data-id="{{this.id}}" class="notPickedUp btn btn-success">Not Picked Up</button>{{/unless}}</td>
-				
+				<th>Package Name</th>
+				<th>Resident Name</th>
+				<th>Apartment Number</th>
+				<th>Building Number</th>
+				<th>Created By</th>
+				<th>Created Date</th>
+				<th>Updator</th>
+				<th>Updated Date</th>
+				<th>Picked Up</th>
+				<th></th>
 			</tr>
-			{{/each}}
 
-		</tbody>
+			<tbody>
 
-	</table>
-<div>
+				{{#each dbPackage}}
+				<tr>
+					<td>{{this.packageName}}</td>
+					<td>{{this.User.name}}</td>
+					<td>{{this.User.UserInfo.building}}
+					<td>{{this.User.UserInfo.number}}</td>
+					<td>{{this.updater}}</td>
+					<td>{{this.createdAt}}</td>
+					<td>{{this.updater}}</td>
+					<td>{{this.updatedAt}}</td>
+					<td> {{#unless this.status}} <p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>{{/unless}}
+						 {{#if this.status}} <p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></p> {{/if}} </td>
+					<td>{{#unless this.status}}<button id = "{{this.id}}" data-id="{{this.id}}" class="notPickedUp btn btn-success">Not Picked Up</button>{{/unless}}</td>
+					
+				</tr>
+				{{/each}}
+
+			</tbody>
+
+		</table>
+
+	<div> <!-- End of nested container********** -->
 	
 
-
-    
-
-
-
-	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
-	      <div class="modal-dialog" role="document">
-	      	 <div class="modal-content">
+	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog"> <!-- Beginning of modal box -->
+	    <div class="modal-dialog" role="document">
+	      	<div class="modal-content">
 	        <div class="newpackagemodal-container">
 	        	<div class="modal-header">
 	          <h3 class='text-center'>New Package</h3>
@@ -81,6 +84,10 @@
 	        </div>
 	    </div>
 	      </div>
-	</div>
-	<a id="logout" class="btn" href="/signout">logout</a>
+	</div> <!-- End of modal box ********* -->
+
 </div>
+<div class="footerA"> 
+	<p><span class= "glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Package Alert Company || Group Members: Abhijit Ghosh, Brian Jin, Manasi Sukthankar, Ted Yang</p>
+</div>
+

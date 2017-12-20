@@ -36,7 +36,7 @@ app.set("view engine", "handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
 
-
+app.use(express.static(path.join(__dirname, '/public/assets/css')));
 
 
 require('./config/passport/passport')(passport, db.User);
