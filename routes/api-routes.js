@@ -194,4 +194,33 @@ module.exports = function(app) {
 			res.redirect('/api/packages/associate')
 		})
 	})
+	//Create User
+	app.post('/api/createUser',helper, function(req,res){
+    // console.log(req.body)
+    db.User.create({
+        name: req.body.name,
+        email: req.body.email,
+        position: req.body.position, 
+        uid: req.body.uid,
+        pwd: req.body.pwd,
+        UserInfo: [{
+            number: req.body.number,
+            building: req.body.building,
+            street: req.body.street
+        }]
+    },
+    {
+        include: [
+                {
+                    model: db.UserInfo
+                }
+                ]
+    }
+    
+    ).then(function(result){
+        // console.log(db.User);
+        // res.json(result);
+        res.redirect('/api/packages/associate');
+    });
+});
 }
