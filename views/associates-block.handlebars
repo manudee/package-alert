@@ -5,6 +5,13 @@
     </div>
 	<h1><center> Hello Associate!</center></h1>
 	<hr>
+	<div id='login'>
+      <button type="button" data-toggle="modal" data-target="#create-modal" class="btn btn-success ">Create New Package</button>
+      <button id = "sendAll" class="sendEmail btn btn-success">Send Email</button>	
+    </div>
+    <hr>
+
+
 	<table class="table table-striped">
 
 		<tr>
@@ -36,7 +43,7 @@
 				<td> {{#unless this.status}} <p>Not Picked up </p>{{/unless}}
 					{{#if this.status}} <p> Picked Up </p> {{/if}} </td>
 				<td>{{#unless this.status}}<button id = "{{this.id}}" data-id="{{this.id}}" class="notPickedUp btn btn-success">Not Picked Up</button>{{/unless}}</td>
-				<td><button data-id="{{this.id}}" class="sendEmail btn btn-success">Send Email</button></td>
+				
 			</tr>
 			{{/each}}
 
@@ -47,9 +54,8 @@
 	
 
 
-    <div id='login'>
-      <button type="button" data-toggle="modal" data-target="#create-modal" class="btn btn-success center-block">Create New Package</button>
-    </div>
+    
+
 
 
 	<div class="modal fade" id="create-modal" tabindex="-1" role="dialog">
