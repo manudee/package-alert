@@ -147,11 +147,14 @@ module.exports = function(app) {
 					nodemailer.createTestAccount((err, account) => {
 						// create reusable transporter object using the default SMTP transport
 						const transporter = nodemailer.createTransport({
-							host: 'smtp.ethereal.email',//smtp.gmail.com
+							// host: 'smtp.ethereal.email',
+							host: 'smtp.gmail.com',
 							port: 587,
 							auth: {
-								user: 'qdxv7unktzkgbgzi@ethereal.email',
-								pass: 'uDrPajJ9kczW6x7d4z'
+								// user: 'qdxv7unktzkgbgzi@ethereal.email',
+								// pass: 'uDrPajJ9kczW6x7d4z'
+								user: 'UNC.project.2',
+								pass: 'tybjagms'
 							}
 						});
 						// setup email data with unicode symbols
