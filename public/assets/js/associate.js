@@ -34,4 +34,13 @@ $(function() {
 
 	});
 
+	$("body").on('click','#sendAll',function(event){
+		event.preventDefault();
+		$.ajax('/api/packages/sendAlert',{
+			type: "GET"
+		}).then(function(){
+			console.log('email send');
+		})
+	})
+
 });

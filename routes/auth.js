@@ -1,4 +1,4 @@
-
+var helper = require('./route-helper.js')
 
 
 
@@ -8,9 +8,7 @@ module.exports = function(app,passport){
 	
 
 
-
-
-app.get('/decision', function(req, res) {
+app.get('/decision',helper, function(req, res) {
 	if (req.user.position === 'Associate') {
 		res.redirect('/api/packages/associate')
 	}
