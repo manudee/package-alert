@@ -15,6 +15,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "dialect": "mysql"
-  }
+   "username": "n8neuq267kkyxf9n",
+   "password":  "xzdpd1v8960x6gcd",
+
+   "database": "pkg_invenDB",
+   "host": "k3xio06abqa902qt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+   "dialect": "mysql"
+ }
 }
