@@ -6,8 +6,8 @@ $(function() {
 		var id = $(this).data("id");
 		var buttonId = $(this).attr('id');
 		console.log("buttonId is " + buttonId);
-		var url = '/api/packages/associate/'+ id;
-
+		
+		
 		var associatePkgState = {
 
 			pickUpDate: new Date(),
@@ -18,7 +18,7 @@ $(function() {
 
 
 
-		$.ajax(url, {
+		$.ajax("/api/packages/associate/" + id, {
 
 			type: "PUT",
 			data: associatePkgState
