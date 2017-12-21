@@ -6,7 +6,7 @@ $(function() {
 		var id = $(this).data("id");
 		var buttonId = $(this).attr('id');
 		console.log("buttonId is " + buttonId);
-
+		var url = "/api/residents/packages/" + id;
 
 		var residentPkgState = {
 
@@ -17,7 +17,7 @@ $(function() {
 
 
 
-		$.ajax("/api/residents/packages/" + id, {
+		$.ajax(url, {
 			type: "PUT",
 			data: residentPkgState
 		}).then(
