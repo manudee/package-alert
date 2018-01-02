@@ -6,8 +6,8 @@ $(function() {
 		var id = $(this).data("id");
 		var buttonId = $(this).attr('id');
 		console.log("buttonId is " + buttonId);
-
-
+		
+		
 		var associatePkgState = {
 
 			pickUpDate: new Date(),
@@ -33,5 +33,14 @@ $(function() {
 		});
 
 	});
+
+	$("body").on('click','#sendAll',function(event){
+		event.preventDefault();
+		$.ajax('/api/packages/sendAlert',{
+			type: "GET"
+		}).then(function(){
+			console.log('email send');
+		})
+	})
 
 });

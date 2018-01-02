@@ -2,7 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require('express-handlebars');
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8081;
 var env = require('dotenv').load();
 var db = require("./models");
 var passport = require("passport");
@@ -30,30 +30,22 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
 //handlebar settings
-//app.set('views', path.join(__dirname, 'views/layouts'));
+
 app.use(express.static("public"));
 app.set("view engine", "handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
 
+app.use(express.static(path.join(__dirname, '/public/assets/css')));
 
 
-
-// require("./routes/api-routes.js")(app);
 require('./config/passport/passport')(passport, db.User);
-// require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
 
-require("./routes/api-package-alert.js")(app);
+require("./routes/api-routes.js")(app);
 
 var authroute = require('./routes/auth.js')(app,passport);
 
 
-
-
-require("./routes/associates-api-routes.js")(app);
-
-require("./routes/residents-api-routes.js")(app);
 
 
 

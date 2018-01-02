@@ -1,42 +1,53 @@
 <div class = 'container'>
 	<div class="jumbotron">
-		<h1 class='text-center'>Welcome to Package Alert!</h1>
+		<h1 class='mainHeader text-center'>Welcome to Package Alert!</h1>
+		<a id="logout" class="btn" href="/signout">Logout</a>
 	</div>
-	<div class='row'> <h1> Hello Resident </h1> </div>
-	<a id="logout" class="btn" href="/signout">logout</a>
-	
+	<div>
+		<center>
+			<h1> Hello {{this.packages.name}}! </h1> 
+			<p> Apt Building: {{this.dbUserDetails.UserInfo.building}} </p> 
+			<p> Apt Number: {{this.dbUserDetails.UserInfo.number}}</p> 
+			<p> Street: {{this.dbUserDetails.UserInfo.street}}</p>
+		</center>
+	</div>
 
 	<div class="row">
-		<h1 class="text-center"> Packages for Residents </h1>
+		<h1 class="text-center"> Packages Awaiting for Pickup </h1>
 	</div>
 
+	<hr>
+
 	<div>
-		
+
 		<table class="table table-striped">
 			<tr>
 				<th>#</th>
 				<th>Package ID</th>
 				<th>Package Name</th>
-				<th>Package Status</th>
-				<th>PickedUpState</th>
+				<th>Picked Up</th>
+				<th></th>
 			</tr>
 
 			<tbody>
-				
-				{{#each packages}}
+
+				{{#each this.packages.packages}}
 				<tr>
 					<th scope="row">{{this.id}}</th>
 					<td> {{this.id}} </td>
 					<td> {{this.packageName}} </td>
-					<td> {{#unless this.status}} <p>Not Picked up </p>{{/unless}}
-						 {{#if this.status}} <p> Picked Up </p> {{/if}} </td>
-					<td>{{#unless this.status}}<button id = "{{this.id}}" data-id="{{this.id}}" class="notPickedUp btn btn-success">Not Picked Up</button>{{/unless}}</td>
-					{{/each}}
-					
-				</tr>
+					<td> {{#unless this.status}} <p><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></p>{{/unless}}
+						{{#if this.status}} <p><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></p> {{/if}} </td>
+						<td>{{#unless this.status}}<button id = "{{this.id}}" data-id="{{this.id}}" class="notPickedUp btn btn-success">Not Picked Up</button>{{/unless}}</td>
+						{{/each}}
 
-			</tbody>
-		</table>
-	</div>
+					</tr>
 
+				</tbody>
+			</table>
+		</div>
+
+</div>
+<div class="footerA"> 
+	<p><span class= "glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Package Alert Company || Group Members: Abhijit Ghosh, Brian Jin, Manasi Sukthankar, Ted Yang</p>
 </div>
