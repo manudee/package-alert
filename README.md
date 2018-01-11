@@ -72,4 +72,6 @@ You can view the live application deployed on heroku here https://whispering-bas
 * Back End: Express routes, mySQL DB, Javascript, node.js
 
 
+## Authors
+This app was developed by Abhijit Ghosh, Brian Jin, Ted Yang and Manasi Sukthankar
 
