@@ -6,7 +6,7 @@ $(function() {
 		var id = $(this).data("id");
 		var buttonId = $(this).attr('id');
 		console.log("buttonId is " + buttonId);
-
+		
 
 		var residentPkgState = {
 

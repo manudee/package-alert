@@ -1,51 +1,49 @@
+/*Users*/
+
+insert into Users(name, email, uid, pwd,createdAt, updatedAt) values
+('Roger Federer', 'rf@gmail.com','rf1','rrff1', current_timestamp(),current_timestamp());
+
+insert into Users(name, email,position, uid, pwd,createdAt, updatedAt) values
+('Tom Brady', 'tb@gmail.com', 'Associate','tb1','ttbb1', current_timestamp(),current_timestamp());
+
+insert into Users(name, email, uid, pwd,createdAt, updatedAt) values
+('Rafael Nadal', 'rn@gmail.com', 'rn1','rrnn1', current_timestamp(),current_timestamp());
+
 /*
---users
-insert into users(name, email, uid, pwd,createdAt, updatedAt) values
-('Abhijit', 'ag@gmail.com','ag1','aagg1', current_timestamp(),current_timestamp());
-
-insert into users(name, email, uid, pwd,createdAt, updatedAt) values
-('Manasi', 'ms@gmail.com','ms1','mmss1',current_timestamp(),current_timestamp());
-
-insert into users(name, email, position, uid, pwd,createdAt, updatedAt) values
-('Ted', 'ty@gmail.com','Associate','ty1','ttyy1',current_timestamp(),current_timestamp());
-
-insert into users(name, email, position, uid, pwd,createdAt, updatedAt) values
-('Brian', 'bj@gmail.com','Associate','bj1','bbjj1',current_timestamp(),current_timestamp());
-
+test email credentials
+packagetest25@gmail.com
+package1234
 */
 
+/*UserInfo*/
 
-/*packages
-
-insert into packages (packageName,createdAt,updatedAt,UserId)
+insert into UserInfos (number, building, street, createdAt, updatedAt,UserId)
 values
-('A1',current_timestamp(),current_timestamp(),1);
+('1301','A','Hopson Road',current_timestamp(),current_timestamp(),1);
 
 
-insert into packages (packageName,createdAt,updatedAt,UserId)
+insert into UserInfos (number, building, street, createdAt, updatedAt,UserId)
 values
-('A2',current_timestamp(),current_timestamp(),2)
+('1602','B','Select Drive',current_timestamp(),current_timestamp(),3);
 
-*/
-
-
-/*user info
-insert into userinfos (number, building, street, createdAt, updatedAt,UserId)
+insert into UserInfos (number, building, street, createdAt, updatedAt,UserId)
 values
-('1111','AAA','AAA1',current_timestamp(),current_timestamp(),1);
+('1510','C','New Park Way',current_timestamp(),current_timestamp(),4);
 
-insert into userinfos (number, building, street, createdAt, updatedAt,UserId)
+
+/* Packages*/
+insert into Packages (packageName,createdAt,updatedAt,UserId)
 values
-('2222','MMM','MMM1',current_timestamp(),current_timestamp(),2);
+('Tennis Racket',current_timestamp(),current_timestamp(),1);
 
-
-insert into userinfos (number, building, street, createdAt, updatedAt,UserId)
+insert into Packages (packageName,createdAt,updatedAt,UserId)
 values
-('3333','TTT','TTT1',current_timestamp(),current_timestamp(),3);
+('Tennis Jacket',current_timestamp(),current_timestamp(),3);
 
-
-insert into userinfos (number, building, street, createdAt, updatedAt,UserId)
+insert into Packages (packageName,createdAt,updatedAt,UserId)
 values
-('4444','BBB','BBB1',current_timestamp(),current_timestamp(),4);
+('Tennis Bag',current_timestamp(),current_timestamp(),3);
 
-*/
+insert into Packages (packageName,createdAt,updatedAt,UserId)
+values
+('Sports Socks',current_timestamp(),current_timestamp(),3);
