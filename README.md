@@ -33,8 +33,15 @@ To use the application as a Resident user
 
 Below is the preview of the application
 
-## Login
-![Alt Text](public/assets/images/packageAlertLogin.gif)
+## Associate Login
+![Alt Text](/public/assets/images/AssociateLogin.PNG)
+
+## Associated Logged In
+![Alt Text](public/assets/images/AssociateLoggedIn.PNG)
 
 
+## Resident Login
+![Alt Text](/public/assets/images/ResidentLogin.PNG)
 
+## Resident Logged In
+![Alt Text](/public/assets/images/ResidentLoggedIn.PNG)
