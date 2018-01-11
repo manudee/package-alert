@@ -36,7 +36,7 @@ Below is the preview of the application
 ## Associate Login
 ![Alt Text](/public/assets/images/AssociateLogin.PNG)
 
-## Associated Logged In
+## Associate Logged In
 ![Alt Text](public/assets/images/AssociateLoggedIn.PNG)
 
 
