@@ -21,12 +21,20 @@ We have created two main user roles for this application.
 
 
 You can view the live application deployed on heroku here https://whispering-bastion-28782.herokuapp.com/
-To use the application as an Associate user, login as user/password: tb1/ttbb1
-To use the application as a Resident user, login as user/password: rn1/rrnn1
+To use the application as an Associate user 
+ * login as user/password: tb1/ttbb1
+To use the application as a Resident user
+ * login as user/password: rn1/rrnn1
 
 ## Technology Stack
 * Front End: html, css, handlebars
 * Back End: Express routes, mySQL DB, Javascript, node.js
+
+
+Below is the preview of the application
+
+## Login
+![Alt Text](public/assets/images/packageAlertLogin.gif)
 
 
 
